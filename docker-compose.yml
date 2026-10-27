@@ -1,0 +1,10 @@
+services:
+  organ-classifier:
+    build: .
+    container_name: med_organ_classifier
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+    restart: unless-stopped
